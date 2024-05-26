@@ -22,6 +22,7 @@ import { colours } from "./Helpers/v1/Colours";
 //import { WebSocket } from "./Config/v1/WebSocket";
 import { en } from "./Services/v1/Lang/en";
 import { fr } from "./Services/v1/Lang/fr";
+import { pt } from "./Services/v1/Lang/pt";
 import { axiosInstance, setAuthToken } from "./Config/v1/Axios";
 /**********************
 * CONTEXTS 
@@ -132,7 +133,7 @@ const App = () => {
 export default () => {
 
   i18n.fallbacks = true;
-  i18n.translations = { en, fr }
+  i18n.translations = { en, fr, pt }
   let local_array = Localization.locale.split("-");
   let local_lang = (local_array.length > 1) ? local_array[0] : Localization.locale;
   
@@ -146,9 +147,6 @@ export default () => {
 
     const [staticData, setStaticData] = useState({
       tempPassword: null,
-      vehicleTypes: null,
-      carTopTypes: null,
-      staticCars: null,
       permissionStatus: false,
       location: null,
       savedLocation: null,
@@ -158,8 +156,9 @@ export default () => {
       model: Device.modelName,
       device_name: Device.deviceName,
       push_self_notify : false,
-      country: null,
-      countries: null,
+      country: "The Gambia",
+      tribesCountry: "The Gambia",
+      tribes: [{ name: "Mandinka_GMB", spelling: "Mandinka", population_rank: 1 }, { name: "Fula_GMB", spelling: "Pulaar", population_rank: 2 }, { name: "Wollof_GMB", spelling: "Wollof", population_rank: 3 }, { name: "Jola_GMB", spelling: "Jola", population_rank: 4 }, { name: "Serrehule_GMB", spelling: "Serrehule", population_rank: 5 }],
       registered: false,
       notification: null,
       locationNotification: null,

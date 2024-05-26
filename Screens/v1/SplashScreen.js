@@ -17,11 +17,12 @@ import { DataContext } from "../../Contexts/v1/DataContext";
 /**********************
 * RESOURCES 
 ***********************/
-import { styles } from "../../Styles/v1/SplashStyles";
+import { styles, height } from "../../Styles/v1/SplashStyles";
 import { generalStyles } from "../../Styles/v1/GeneralStyles";
 import { colours } from "../../Helpers/v1/Colours";
 import { en } from "../../Services/v1/Lang/en";
 import { fr } from "../../Services/v1/Lang/fr";
+import { pt } from "../../Services/v1/Lang/pt";
 import { registerForPushNotificationsAsync } from "../../Services/v1/RegisterForNotifications";
 import { playAudio } from "../../Resources/v1/PlaySound";
 import { splashScreenAudio } from "../../Resources/v1/AudioData";
@@ -29,9 +30,9 @@ import { splashScreenAudio } from "../../Resources/v1/AudioData";
 * COMPONENTS 
 ***********************/
 import StartButton from "../../Buttons/v1/StartButton";
-/*import LanguagePicker from "../../Components/v1/LanguagePicker";
+import LanguagePicker from "../../Components/v1/LanguagePicker";
 import CountryPicker from "../../Components/v1/CountryPicker";
-import Tribes from "../../Components/v1/Tribes";*/
+import Tribes from "../../Components/v1/Tribes";
 /**
 * The Splash Screen/Landing Screen when the App is first installed or when the User has logged out.
 *
@@ -50,11 +51,11 @@ LogBox.ignoreLogs([
 
 const SplashScreen = ({ navigation }) => { 
 
-  const { language } = useContext(LanguageContext);
+  const { language, setLanguage } = useContext(LanguageContext);
   const { staticData, setStaticData } = useContext(DataContext);
 
   i18n.fallbacks = true;
-  i18n.translations = { en, fr }
+  i18n.translations = { en, fr, pt }
   let local_array = Localization.locale.split("-");
   let local_lang = (local_array.length > 1) ? local_array[0] : Localization.locale;
   
@@ -79,33 +80,10 @@ const SplashScreen = ({ navigation }) => {
       });
     }); */
 
-    //playAudio(splashScreenAudio.splashAudio, 1000);
+    playAudio(splashScreenAudio.splashAudio, 1000);
   }, []); 
   
-    /*
-    <LanguagePicker />
-
-{staticData.tribesCountry ? (
-              <View style={generalStyles.langAndContView}>
-                <View style={{marginLeft: 5}}>
-                  <Text style={{...generalStyles.langAndContText, color: colours.white }}>{i18n.t("Tribes from") + "..."}</Text>
-                </View>
-                <CountryPicker />
-              </View>
-              ) : null}
-
-              <View style={generalStyles.action}>
-          {!staticData.tribesCountry ? (
-            <View>
-              <Text style={styles.tribesText}>{i18n.t("Loading audio for tribal languages")}...</Text>
-              <Image style={styles.loading} source={require('../../assets/pictures/loading.gif')} />
-            </View>
-          ) : (
-            < Tribes countryTribes={ staticData.tribes } language = { language } setLanguage = { setLanguage } />)
-          }
-        </View>
-
-        */
+    
   return (
     <View style={styles.container}>      
       <View style={styles.header}>
@@ -114,12 +92,18 @@ const SplashScreen = ({ navigation }) => {
               
               <View style={generalStyles.langAndContView}>
                 <View style={{marginLeft: 5}}>
-                <Text style={{ ...generalStyles.langAndContText, color: colours.white }}>{i18n.t("Legible in") + "..."}</Text>
+                <Text style={{ ...generalStyles.langAndContText, color: colours.white }}>{i18n.t("Legible in")}</Text>
                 </View>
-                
+                <LanguagePicker />
               </View>
               
               
+              <View style={generalStyles.langAndContView}>
+                <View style={{marginLeft: 5}}>
+                  <Text style={{...generalStyles.langAndContText, color: colours.white }}>{i18n.t("Tribes from")}</Text>
+                </View>
+                <CountryPicker />
+              </View>
             
             </View>
           </View>
@@ -135,10 +119,12 @@ const SplashScreen = ({ navigation }) => {
         </View>
       </View>
 
-      <Animatable.View style={{ ...styles.footer, ...generalStyles.footer }} animation="fadeInUpBig">
-        <Text style={styles.title}>{i18n.t("Audible in") + "..."}</Text>
+      <Animatable.View style={styles.footer} animation="fadeInUpBig">
+        <Text style={{ ...styles.title, marginBottom: height * .015, marginTop: 10}}>{i18n.t("Audible in")}</Text>
         
-
+        <View style={generalStyles.action}>
+          < Tribes countryTribes={ staticData.tribes } language = { language } setLanguage = { setLanguage } />
+        </View>
         <View style={styles.login}>
           <StartButton navigation={navigation} />
         </View>

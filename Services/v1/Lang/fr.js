@@ -1,5 +1,9 @@
 export const fr = {
     "Audible in": "Audible dans",
+    "Tribes from": "Des tribus de",
+    "The Gambia": "La Gambie",
+    "Senegal": "Sénégal",
+    "Guinea-Bissau": "Guinée-Bissau",
     "Your booking has been processed successfully": "Votre réservation a été traitée avec succès",
     "Payment Methods Coming Soon": "Méthodes de paiement à venir",
     "ARRIVING SOON": "BIENTÔT DISPONIBLE",
@@ -483,11 +487,7 @@ export const fr = {
     "Are you okay with this price?": "Êtes-vous d'accord avec ce prix?",
     "Enter new price and send?": "Entrer un nouveau prix et envoyer?",
     
-    "Audible in": "Audible dans",
-    "Tribes from": "Des tribus de",
-    "The Gambia": "La Gambie",
-    "Senegal": "Sénégal",
-    "Guinea-Bissau": "Guinée-Bissau",
+    
     "Desired Location": "Endroit Désiré",
     "Place finger on marker and drag to location": "Placez le doigt sur le marqueur et faites-le glisser jusqu'à l'emplacement",
     "Could not get the new position": "Impossible d'obtenir le nouveau poste",

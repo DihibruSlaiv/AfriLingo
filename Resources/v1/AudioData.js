@@ -1,7 +1,7 @@
 const splashScreenAudio = {
   Wollof_GMB: require("../../assets/audio/Wollof_GMB/language-audio.mp3"),
   Mandinka_GMB: require("../../assets/audio/Mandinka_GMB/language-audio.mp3"),
-  //marseJollofAudio: require("../../assets/audio/splash-audio.mp3"),
+  splashAudio: require("../../assets/audio/afrilingoaudio.mp3"),
 };
 
 const loginScreenAudio = {

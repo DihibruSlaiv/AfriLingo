@@ -9,6 +9,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colours.white,
   },
+  languageText2: {
+    color: "#fff",
+    fontSize: 14,
+  },
+  languageText2Active: {
+    color: "#670463",
+    fontSize: 14,
+  },
   loadingView: {
     marginTop: height * .08,
     alignItems: 'center',
@@ -30,17 +38,35 @@ const styles = StyleSheet.create({
     flex: 1.3,
   },
   topBarView: {
-    marginHorizontal: width * 0.05,
+    marginHorizontal: width * 0.02,
     marginBottom: width * 0.03,
     marginTop: width * 0.06
   }, 
+  preference: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingVertical: height * 0.015,
+    height: height * 0.06,
+    width: width * .32
+  },
+  active: {
+    backgroundColor: '#E6E7F1',
+    width: width / 3,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingVertical: height * 0.015,
+    borderRadius: 10,
+    paddingLeft: 5,
+    height: height * 0.06,
+    width: width * .32
+  },
   headerLogo: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: height * .04
+    marginTop: height * .02
   },
   footer: {
-    flex: 1.3,
+    flex: 1.1,
     backgroundColor: colours.darkBlue,
     paddingBottom: 30,
     paddingTop: 5,
@@ -60,7 +86,6 @@ const styles = StyleSheet.create({
   },
   login: {
     width: "100%",
-    top: height * 0.01,
     flexDirection: "row",
     justifyContent: 'flex-end',
     alignItems: "center",
@@ -85,8 +110,7 @@ const styles = StyleSheet.create({
   title: {
     color: colours.white,
     fontSize: 16,
-    fontWeight: "bold",
-    marginLeft: 10, 
+    fontWeight: "bold"
   }  
 });
 

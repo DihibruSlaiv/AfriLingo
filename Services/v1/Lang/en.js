@@ -1,5 +1,9 @@
 export const en = {
     "Audible in": "Audible in",
+    "Tribes from": "Tribes from",
+    "The Gambia": "The Gambia",
+    "Senegal": "Senegal",
+    "Guinea-Bissau": "Guinea-Bissau",
     "ARRIVING SOON": "ARRIVING SOON",
     'Stop': 'Stop',
     "You have not made any updates": "You have not made any updates",
@@ -9,7 +13,6 @@ export const en = {
     "WAITING FOR DRIVER TO ACCEPT": "WAITING FOR DRIVER TO ACCEPT",
     "Sign in with ": "Sign in with ",
     "Already a member?": "Already a member?",
-    "Enter Mobile Number": "Enter Mobile Number",
     "View": "View",
     "View Passenger": "View Passenger",
     "New Bookings": "New Bookings",
@@ -485,11 +488,7 @@ export const en = {
     "Are you okay with this price?": "Are you okay with this price?",
     "Enter new price and send?": "Enter new price and send?",
     
-    "Audible in": "Audible in",
-    "Tribes from": "Tribes from",
-    "The Gambia": "The Gambia",
-    "Senegal": "Senegal",
-    "Guinea-Bissau": "Guinea-Bissau",
+    
     "Desired Location": "Desired Location",
     "Place finger on marker and drag to location": "Place finger on marker and drag to location",
     "Could not get the new position": "Could not get the new position",
