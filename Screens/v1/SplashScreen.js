@@ -33,6 +33,7 @@ import StartButton from "../../Buttons/v1/StartButton";
 import LanguagePicker from "../../Components/v1/LanguagePicker";
 import CountryPicker from "../../Components/v1/CountryPicker";
 import Tribes from "../../Components/v1/Tribes";
+import NativeTribes from "../../Components/v1/NativeTribes";
 /**
 * The Splash Screen/Landing Screen when the App is first installed or when the User has logged out.
 *
@@ -71,7 +72,6 @@ const SplashScreen = ({ navigation }) => {
           shouldSetBadge: true,
         }),
     });
-
     /*registerForPushNotificationsAsync().then(token => {
       i18n.expoPushToken = token
       setStaticData({
@@ -79,8 +79,8 @@ const SplashScreen = ({ navigation }) => {
           expoPushToken: token,
       });
     }); */
-
     playAudio(splashScreenAudio.splashAudio, 1000);
+    
   }, []); 
   
     
@@ -120,21 +120,22 @@ const SplashScreen = ({ navigation }) => {
       </View>
 
       <Animatable.View style={styles.footer} animation="fadeInUpBig">
-        <View style={generalStyles.action}>
-        <Text style={{ ...styles.title, marginBottom: height * .015, marginTop: 10}}>{i18n.t("Audible in")}</Text>
-        <Text style={{ ...styles.title, marginBottom: height * .015, marginTop: 10, right: width * .05}}>{i18n.t("I want to learn")}</Text>
-        </View>
-          <View style={generalStyles.action}>
-        <View style={generalStyles.action}>
-            < Tribes countryTribes={staticData.tribes} language={language} setLanguage={setLanguage} nt={ false} />
-        </View>
         
-          <View style={styles.login}>
+            <View style={generalStyles.action}>
+              <Text style={{ ...styles.title, marginBottom: height * .015, marginTop: 10 }}>{i18n.t("Audible in")}</Text>
+              <Text style={{ ...styles.title, marginBottom: height * .015, marginTop: 10, right: width * .05 }}>{i18n.t("I want to learn")}</Text>
+            </View>
+            <View style={generalStyles.action}>
+              <View style={generalStyles.action}>
+                < Tribes countryTribes={staticData.tribes} language={language} setLanguage={setLanguage} />
+              </View>
+        
+              <View style={styles.login}>
             
-          < Tribes countryTribes={ staticData.tribes } language = { language } setLanguage = { setLanguage } nt={ true}/>
-          <StartButton navigation={navigation} />
-          </View>
-          </View>
+                < NativeTribes nativeTribes={staticData.nativeTribes} language={language} setLanguage={setLanguage} />
+                <StartButton navigation={navigation} />
+              </View>
+            </View>
       </Animatable.View>              
     </View>
   );

@@ -142,7 +142,9 @@ export default () => {
     const [language, setLanguage] = useState({
         audioLanguage: null,
         audioSpecificLanguage: null,
-        writtenLanguage: local_lang
+        writtenLanguage: local_lang,
+        languageToLearnAudio: "Mandinka_GMB",
+        languageToLearn: "Mandinka"
     });
 
     const [staticData, setStaticData] = useState({
@@ -159,6 +161,7 @@ export default () => {
       country: "The Gambia",
       tribesCountry: "The Gambia",
       tribes: [{ name: "English", spelling: "English", population_rank: 1 },{ name: "Mandinka_GMB", spelling: "Mandinka", population_rank: 2 }, { name: "Fula_GMB", spelling: "Pulaar", population_rank: 3 }, { name: "Wollof_GMB", spelling: "Wollof", population_rank: 4 }, { name: "Jola_GMB", spelling: "Jola", population_rank: 5 }, { name: "Serrehule_GMB", spelling: "Serrehule", population_rank: 6 }],
+      nativeTribes: [{ name: "Mandinka_GMB", spelling: "Mandinka", population_rank: 1 }, { name: "Fula_GMB", spelling: "Pulaar", population_rank: 2 }, { name: "Wollof_GMB", spelling: "Wollof", population_rank: 3 }, { name: "Jola_GMB", spelling: "Jola", population_rank: 4 }, { name: "Serrehule_GMB", spelling: "Serrehule", population_rank: 5 }],
       registered: false,
       notification: null,
       locationNotification: null,

@@ -7,7 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 /**********************
 * SCREENS 
 ***********************/
-//import LoginScreen from "./LoginScreen";
+import LoginScreen from "./LoginScreen";
 import SplashScreen from "./SplashScreen";
 //import PreregisterScreen from "./PreregisterScreen";
 /**********************
@@ -62,6 +62,7 @@ const RootStackScreen = () => {
     <RootStackContext.Provider value={{ data, setData }}>
       <Rootstack.Navigator screenOptions={{ headerShown: false }}>
         <Rootstack.Screen name="SplashScreen" component={SplashScreen} />
+        <Rootstack.Screen name="LoginScreen" component={LoginScreen} />
       </Rootstack.Navigator>
     </RootStackContext.Provider>
   );

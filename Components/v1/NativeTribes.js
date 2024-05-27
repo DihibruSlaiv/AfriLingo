@@ -6,7 +6,7 @@ import { View } from "react-native";
 /**********************
 * COMPONENTS 
 ***********************/
-import TribeRadioButton from "../../Buttons/v1/TribeRadioButton";
+import NativeTribeRadioButton from "../../Buttons/v1/NativeTribeRadioButton";
 /**********************
 * RESOURCES 
 ***********************/
@@ -24,18 +24,18 @@ import { headerStyles } from "../../Styles/v1/GeneralStyles";
 
 
 
-const Tribes = ({
-  countryTribes,
+const NativeTribes = ({
+  nativeTribes,
   language,
-  setLanguage,
-  nt
+  setLanguage
 }) => {
 
   let active_tribe = "";
 
   if (language.audioLanguage != undefined) {
-    countryTribes.map((tribeData) => {
-      if (language.audioLanguage == tribeData.spelling) {        
+    nativeTribes.map((tribeData) => {
+      if (language.audioLanguage == tribeData.spelling) {
+        
         active_tribe = tribeData;
       }
     })
@@ -58,12 +58,12 @@ const Tribes = ({
   return (
     <View style={headerStyles.topMargin}>
       {
-        countryTribes.map((tribeData) => {
-          return (<TribeRadioButton key={tribeData.population_rank} tribeData={tribeData} tribes={tribes}
+        nativeTribes.map((tribeData) => {
+          return (<NativeTribeRadioButton key={tribeData.population_rank} tribeData={tribeData} tribes={tribes}
             setTribes={setTribes} language={language} setLanguage={setLanguage} />)
         })}
     </View>)
 }
 
-export default Tribes;
+export default NativeTribes;
 

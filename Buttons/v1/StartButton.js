@@ -30,7 +30,7 @@ const StartButton = ({ navigation }) => {
       backgroundShadow={colours.gold}
       backgroundDarker={colours.darkBlue}
       onPress={() => {
-        //navigation.navigate("LoginScreen")
+        navigation.navigate("LoginScreen")
       }}
       textColor={colours.darkBlue}
   >

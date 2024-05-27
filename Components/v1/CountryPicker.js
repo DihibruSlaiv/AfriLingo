@@ -47,7 +47,8 @@ const CountryPicker = () => {
                 setStaticData({
                   ...staticData,
                   tribesCountry: itemValue,
-                  tribes: country.tribes
+                  tribes: country.tribes,
+                  nativeTribes: country.nativeTribes,
                 });
 
                 setLanguage({
