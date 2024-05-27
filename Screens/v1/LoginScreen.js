@@ -20,6 +20,7 @@ import MainBackButton from "../../Buttons/v1/MainBackButton";
 ***********************/
 import { DataContext } from "../../Contexts/v1/DataContext";
 import { LanguageContext } from "../../Contexts/v1/LanguageContext";
+import { Context as AuthContext } from "../../Contexts/v1/AuthContext";
 /**********************
 * RESOURCES 
 ***********************/
@@ -34,7 +35,8 @@ LogBox.ignoreLogs(["Linking requires a build-time setting `scheme` in the projec
 
 
 const LoginScreen = ({ navigation }) => { 
-    const { staticData, setStaticData } = useContext(DataContext); 
+  const { staticData, setStaticData } = useContext(DataContext); 
+  const { signin, signup } = useContext(AuthContext);
     const { language } = useContext(LanguageContext);
   const [data, setData] = useState({    
     mainError: ""
@@ -120,7 +122,7 @@ const LoginScreen = ({ navigation }) => {
                 backgroundShadow={colours.darkBlue}
                 backgroundDarker={colours.gold}
                       onPress={(next) => {
-                          //signIn()
+                          signin()
                       }
                       }
               >
@@ -148,7 +150,7 @@ const LoginScreen = ({ navigation }) => {
                   backgroundShadow={colours.darkBlue}
                   backgroundDarker={colours.gold}
                       onPress={(next) => {
-                          //signUp()
+                          signup()
                       }
                       }
                 >

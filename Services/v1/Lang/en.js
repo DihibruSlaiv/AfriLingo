@@ -1,4 +1,10 @@
 export const en = {
+    'Language Settings': 'Language Settings',
+    'Account': 'Account',
+    'Feedback': 'Feedback',
+    'Home': 'Home',
+    'Courses': 'Courses',
+    'Vocabulary': 'Vocabulary',
     "I want to learn": "I want to learn",
     "Audible in": "Audible in",
     "Tribes from": "Tribes from",

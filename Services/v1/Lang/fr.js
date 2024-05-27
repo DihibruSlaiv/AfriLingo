@@ -1,4 +1,10 @@
 export const fr = {
+    'Language Settings': 'Paramètres de Langue',
+    'Account': 'Compte',
+    'Feedback': 'Retour',
+    'Home': 'Home',
+    'Courses': 'Cours',
+    'Vocabulary': 'Vocabulaire',
     "Audible in": "Audible dans",
     "Tribes from": "Des tribus de",
     "The Gambia": "La Gambie",

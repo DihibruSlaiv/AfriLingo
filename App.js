@@ -10,7 +10,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 /**********************
 * SCREENS 
 ***********************/
-//import { ActiveStackScreen } from './Screens/v1/ActiveStackScreen';
+import { ActiveStackScreen } from './Screens/v1/ActiveStackScreen';
 //import { WalletsScreen } from './Screens/v1/WalletsScreen';
 import RootStackScreen from './Screens/v1/RootStackScreen';
 //import PreSplashScreen from './Screens/v1/PreSplashScreen';
@@ -125,7 +125,11 @@ const App = () => {
   return (
     <NavigationContainer>
       <StatusBar barStyle="light-content" backgroundColor={colours.darkBlue} />
-      <RootStackScreen />  
+      {state.token !== null ? (
+              <ActiveStackScreen/>
+          ) : (
+              <RootStackScreen />
+      )} 
     </NavigationContainer>
   );
 }

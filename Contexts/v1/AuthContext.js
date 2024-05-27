@@ -30,7 +30,7 @@ const signin = (dispatch) => {
 
   const { staticData } = useContext(DataContext);
 
-  return (data, setData, name) => {
+  return () => {
 
         /*let api_data = JSON.stringify({ name, password: name, manufacturer: staticData.manufacturer,
           model: staticData.model, device_name: staticData.device_name, push_token: staticData.expoPushToken
@@ -66,7 +66,15 @@ const signin = (dispatch) => {
         })
         .catch(function (error) {
             console.log(error);
-        });  */  
+        });  */
+    
+              dispatch({
+                type: "signin",
+                payload: {
+                  token: 'kjajhsdalksdKSD',
+                  userData: 'kjajhsdalksdKSD',
+                },
+              }); 
     };
 };
 
@@ -75,7 +83,7 @@ const signup = (dispatch) => {
 
   const { staticData } = useContext(DataContext);
 
-  return (data, setData, api_data, next) => {
+  return () => {
 
         /*const res = axiosInstance.post('/user/registerAndLogin', api_data)
           .then(function (response) {
@@ -108,7 +116,15 @@ const signup = (dispatch) => {
         })
         .catch(function (error) {
             console.log(error);
-        });   */ 
+        });   */
+    
+    dispatch({
+                type: "signin",
+                payload: {
+                  token: 'kjajhsdalksdKSD',
+                  userData: 'kjajhsdalksdKSD',
+                },
+              }); 
     };
 };
 

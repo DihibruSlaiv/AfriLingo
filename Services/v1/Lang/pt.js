@@ -1,4 +1,10 @@
 export const pt = {
+    'Language Settings': 'Configurações de Linguagem',
+    'Account': 'Conta',
+    'Feedback': 'Opinião',
+    'Home': 'Home',
+    'Courses': 'Cursos',
+    'Vocabulary': 'Vocabulário',
     "Audible in": "Audível em",
     "Tribes from": "Tribos de",
     "The Gambia": "A Gâmbia",
