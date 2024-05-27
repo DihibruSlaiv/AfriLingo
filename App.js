@@ -38,7 +38,7 @@ const App = () => {
   const { state } = useContext(AuthContext);
   const [appReady, setAppReady] = useState(false);
 
-  /*async function onFetchUpdateAsync() {
+  async function onFetchUpdateAsync() {
     try {
       const update = await Updates.checkForUpdateAsync();
 
@@ -50,7 +50,7 @@ const App = () => {
       // You can also add an alert() to see the error message in case of an error when fetching updates.
       alert(`Error fetching latest Expo update: ${error}`);
     }
-  }  */
+  }  
 
 
   /*const checkLoginCredentials = async () => { 
@@ -93,7 +93,7 @@ const App = () => {
 
   useEffect(() => { 
     
-    //onFetchUpdateAsync();
+    onFetchUpdateAsync();
   }, []);  
 
 
@@ -158,7 +158,7 @@ export default () => {
       push_self_notify : false,
       country: "The Gambia",
       tribesCountry: "The Gambia",
-      tribes: [{ name: "Mandinka_GMB", spelling: "Mandinka", population_rank: 1 }, { name: "Fula_GMB", spelling: "Pulaar", population_rank: 2 }, { name: "Wollof_GMB", spelling: "Wollof", population_rank: 3 }, { name: "Jola_GMB", spelling: "Jola", population_rank: 4 }, { name: "Serrehule_GMB", spelling: "Serrehule", population_rank: 5 }],
+      tribes: [{ name: "English", spelling: "English", population_rank: 1 },{ name: "Mandinka_GMB", spelling: "Mandinka", population_rank: 2 }, { name: "Fula_GMB", spelling: "Pulaar", population_rank: 3 }, { name: "Wollof_GMB", spelling: "Wollof", population_rank: 4 }, { name: "Jola_GMB", spelling: "Jola", population_rank: 5 }, { name: "Serrehule_GMB", spelling: "Serrehule", population_rank: 6 }],
       registered: false,
       notification: null,
       locationNotification: null,

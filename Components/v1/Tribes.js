@@ -28,14 +28,15 @@ const Tribes = ({
   countryTribes,
   language,
   setLanguage,
+  nt
 }) => {
 
   let active_tribe = "";
 
-  console.log('audio: ' + language.audioLanguage)
+  let nativeTribes = (nt) ? countryTribes.filter(tribe => tribe.population_rank !== 1): countryTribes;
 
   if (language.audioLanguage != undefined) {
-    countryTribes.map((tribeData) => {
+    nativeTribes.map((tribeData) => {
       if (language.audioLanguage == tribeData.spelling) {
         
         active_tribe = tribeData;
@@ -60,7 +61,7 @@ const Tribes = ({
   return (
     <View style={headerStyles.topMargin}>
       {
-        countryTribes.map((tribeData) => {
+        nativeTribes.map((tribeData) => {
           return (<TribeRadioButton key={tribeData.population_rank} tribeData={tribeData} tribes={tribes}
             setTribes={setTribes} language={language} setLanguage={setLanguage} />)
         })}

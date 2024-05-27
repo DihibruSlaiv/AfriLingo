@@ -17,7 +17,7 @@ import { DataContext } from "../../Contexts/v1/DataContext";
 /**********************
 * RESOURCES 
 ***********************/
-import { styles, height } from "../../Styles/v1/SplashStyles";
+import { styles, height, width } from "../../Styles/v1/SplashStyles";
 import { generalStyles } from "../../Styles/v1/GeneralStyles";
 import { colours } from "../../Helpers/v1/Colours";
 import { en } from "../../Services/v1/Lang/en";
@@ -120,14 +120,21 @@ const SplashScreen = ({ navigation }) => {
       </View>
 
       <Animatable.View style={styles.footer} animation="fadeInUpBig">
-        <Text style={{ ...styles.title, marginBottom: height * .015, marginTop: 10}}>{i18n.t("Audible in")}</Text>
-        
         <View style={generalStyles.action}>
-          < Tribes countryTribes={ staticData.tribes } language = { language } setLanguage = { setLanguage } />
+        <Text style={{ ...styles.title, marginBottom: height * .015, marginTop: 10}}>{i18n.t("Audible in")}</Text>
+        <Text style={{ ...styles.title, marginBottom: height * .015, marginTop: 10, right: width * .05}}>{i18n.t("I want to learn")}</Text>
         </View>
-        <View style={styles.login}>
+          <View style={generalStyles.action}>
+        <View style={generalStyles.action}>
+            < Tribes countryTribes={staticData.tribes} language={language} setLanguage={setLanguage} nt={ false} />
+        </View>
+        
+          <View style={styles.login}>
+            
+          < Tribes countryTribes={ staticData.tribes } language = { language } setLanguage = { setLanguage } nt={ true}/>
           <StartButton navigation={navigation} />
-        </View>
+          </View>
+          </View>
       </Animatable.View>              
     </View>
   );

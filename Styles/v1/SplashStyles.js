@@ -85,9 +85,9 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
   login: {
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: 'flex-end',
+    width: "95%",
+    flexDirection: "column",
+    justifyContent: 'flex-start',
     alignItems: "center",
   },
   services: {
@@ -114,4 +114,4 @@ const styles = StyleSheet.create({
   }  
 });
 
-export { styles, height };
+export { styles, height, width };

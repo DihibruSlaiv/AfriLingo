@@ -1,4 +1,5 @@
 export const en = {
+    "I want to learn": "I want to learn",
     "Audible in": "Audible in",
     "Tribes from": "Tribes from",
     "The Gambia": "The Gambia",
